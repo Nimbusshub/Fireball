@@ -33,8 +33,6 @@ def Scanner(ipaddress, ports=0, portLr=0):
                 if conn == 0:
                     print("Port {:d}:   Open".format(port))
                     no_ports += 1
-                else:
-                    print("Port {:d}:   Close".format(port))
             socks.close()
 
         elif isinstance(ports, list):
@@ -43,8 +41,6 @@ def Scanner(ipaddress, ports=0, portLr=0):
                 if conn == 0:
                     print("Port {:d}:   Open".format(int(port)))
                     no_ports += 1
-                else:
-                    print("Port {:d}:   Close".format(int(port)))
             socks.close()
 
         elif ports and portLr:
@@ -53,8 +49,6 @@ def Scanner(ipaddress, ports=0, portLr=0):
                 if conn == 0:
                     print("Port {:d}:   Open".format(port))
                     no_ports += 1
-                else:
-                    print("Port {:d}:   Close".format(port))
             socks.close()
 
         ended_at = datetime.now()
