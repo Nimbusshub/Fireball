@@ -8,15 +8,14 @@ from datetime import datetime
 
 def Scanner(ipaddress, ports=0, portLr=0):
     """Function that scans for open port"""
-    subprocess.call('clear', shell=True)
 
     try:
         ipv4 = socket.gethostbyname(ipaddress)
     except Exception:
         print("Error resolving the hostname. Check the hostname and try again")
         return
-    socket.setdefaulttimeout(2)
-    socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    subprocess.call('clear', shell=True)
+    socket.setdefaulttimeout(0.5)
 
     no_ports = 0
     """Print Port Scanner Bannner"""
@@ -28,7 +27,9 @@ def Scanner(ipaddress, ports=0, portLr=0):
     try:
         print('\nScan report for {}\n'.format(ipv4))
         if ports == 0:
-            for port in range(1, 65535):
+            for port in range(1, 65536):
+                socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                socket.setdefaulttimeout(0.5)
                 conn = socks.connect_ex((ipv4, port))
                 if conn == 0:
                     print("Port {:d}:   Open".format(port))
@@ -37,6 +38,8 @@ def Scanner(ipaddress, ports=0, portLr=0):
 
         elif isinstance(ports, list):
             for port in ports:
+                socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                socket.setdefaulttimeout(0.5)
                 conn = socks.connect_ex((ipv4, int(port)))
                 if conn == 0:
                     print("Port {:d}:   Open".format(int(port)))
@@ -45,6 +48,8 @@ def Scanner(ipaddress, ports=0, portLr=0):
 
         elif ports and portLr:
             for port in range(ports, portLr):
+                socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                socket.setdefaulttimeout(0.5)
                 conn = socks.connect_ex((ipv4, port))
                 if conn == 0:
                     print("Port {:d}:   Open".format(port))
