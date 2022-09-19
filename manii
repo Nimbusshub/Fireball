@@ -19,7 +19,7 @@ I populated the other parts with junk. Man page still in process.
 .SH 
 .IP FORMAT:
 The format string is a character string, beginning and ending in its initial shift state, if any. Format string is composed of zero or more directives: ordinary characters \ 
-which are copied unchanged to the output stream; and conversion specification (%) each of which results in fetching zero or more subsequent arguments. 
+which are copied unchanged to the output stream; and conversion specification (%) each of which results in fetching zero or more.
 .SH
 .IP SPECIFIERS:
 Conversion specification is introduced by % and ends with a conversion specifier. Conversion specifiers specifies the type of conversion to be applied. \

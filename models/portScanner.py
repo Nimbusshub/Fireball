@@ -65,8 +65,9 @@ def Scanner(ipaddress, ports=0, portLr=0):
         print("Scan Completed in {}\n".format(scan_completed))
 
     except socket.error:
-        print("Error connecting to the server\n")
+        print("Error, couldn't scan for open ports\n")
         return
 
     except KeyboardInterrupt:
+        socks.close()
         print("\nScan Stopped\n")
