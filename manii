@@ -1,0 +1,109 @@
+.\" Manpage for Fireball.
+.TH _printf "17 September 2022" "version 1.0" "Program Manual for Fireball"
+.SH NAME 
+Fireball - A multipurpose command line tool for offensive and defensive security.
+.SH SYNOPSIS
+.nf
+.PP 
+.BI  "Port Scanner"
+scan ipaddress/domain name [-r 1- 65535]
+.PP 
+.BI "Connection Listener"
+listen -p [port number] [ip address]
+.PP
+.SH DESCRIPTION
+Fireball is a multipurpose command line tool for offensive and defensive security. This powerful tool can scan for open ports, listen and establish connection between devices and sniff on a network and capture the packets.\
+The tool is currently under development. Many functionalities will be added soon.
+
+I populated the other parts with junk. Man page still in process.
+.SH 
+.IP FORMAT:
+The format string is a character string, beginning and ending in its initial shift state, if any. Format string is composed of zero or more directives: ordinary characters \ 
+which are copied unchanged to the output stream; and conversion specification (%) each of which results in fetching zero or more subsequent arguments. 
+.SH
+.IP SPECIFIERS:
+Conversion specification is introduced by % and ends with a conversion specifier. Conversion specifiers specifies the type of conversion to be applied. \
+In between there may be zero or more flags and an optional length modifier. The conversion specifiers of the _printf() function are:
+.TP 
+.B c
+.R The \fIint\fR argument is converted to an \fIunsigned char\fR, and the resulting character is written.
+.TP
+.B s
+.R The \fIconst char *\fR argument is a pointer to an array of characters , that converts the corresponding argument to a character string.
+.TP
+.B d, i
+.R The \fIint\fR is converted to a signed decimal notation.
+.TP
+.B b
+.R The \fIunsigned int\fR argument is converted to a binary.
+.TP
+.B o, u, x, X
+.R The \fIunsigned int\fR argument is converted to unsigned octal \fBo\fR (base 8), unsigned decimal \fBu\fR (base 10), or unsigned hexadecimal \fBx\fR and \fBX\fR notation (base 16).\ 
+The letters abcdef are used for \fBx\fR conversions; the letters ABCDEF are used for \fBX\fR conversions.
+.TP
+.B % %%
+.R If only the \fI%\fR character is written no argument is converted. The complete conversion specification is \fI%%\fR, that returns the actual sign if there in front.
+.TP
+.B S
+.R The \fIconst char\fR argument is a pointer to an array of characters, that converts the corresponding argument to a character string, with non-printable characters \
+(0 < ASCII value < 32 or >= 127).
+.TP
+.B p
+.R The \fIvoid *\fR pointer argument is printed in hexadecimal (as if by %#x or %#lx).
+.TP
+.B r
+.R The \fIconst char\fR prints the strings in reverse.
+.TP
+.B R
+.R The \fIconst char\fR prints the rot13'ed string.
+.SH
+.IP FLAGS:
+The character % is followed by zero or more of the following flags:
+.TP
+.B #
+.R Prints number in hexadecimal, uppercase hexadecimal and octal where the first character of the output string is made zero.
+.TP
+.B +
+.R A sign \fB+\fR or \fB-\fR will be placed before a number followed by a signed conversion.
+.TP 
+.B ' '
+.R A \fI(space)\fR blank space should be left before a positive number (or empty string) produced by a signed conversion.
+.SH
+.IP LENGTH-MODIFIER
+The "integers conversion" stands for d, i, o, u, x or X.
+.TP
+.B l
+.R (ell) A following integer conversion corresponds to a \fIlong\fR or \fIunsigned long\fR argument, or a following \fBn\fR conversion corresponds to a pointer to a \fIlong\fR ar\
+gument or a following \fBc\fR conversion corresponds to an \fIwint_t\fR argument, or a following \fBs\fR conversion corresponds to a pointer to \fwchar_t\fR argument.
+.B h
+.R A following integer conversion corresponds to a \fshort\fR or \funsigned short char\fR argument,  or a following \fBn\fR conversion coresponds to a pointer to a \fshort\fR argument.
+.SH RETURN VALUE
+The function returns the number of all characters in the format string excluding the NULL byte used to terminate the loop.
+.SH EXAMPLE
+.R To print the strings of \fBWe did it!\fR and its length in decimal.
+
+#include ''main.h''
+
+int main(void)
+
+{
+
+	int length;
+
+	_printf(''%s'', ''We did it!'');
+	
+	length = _printf(''We did it! contains %d characters'', length);
+
+	return (0);
+
+}
+
+.SH BUGS
+.R In process
+.SH NOTES
+.R The \fB_print()\fR is a project collaboration between \fBWasiu Bakare\fR and \fBOgunbanjo Nimota Busayo\fR, students of Software Engineering at \fBALX\fR. _printf "version 1.0"\
+ is still in Beta testing mode. If bug(s) are detected, please feel free to email \fBwasiubakare@gmail.com\fR or \fBogunbanjonimotabusayo@gmail.com\fR . If you wish to join the development team, please send an email to same address.
+.SH SEE ALSO
+.R printf(3)
+.SH AUTHORS
+Written by \fBOgunbanjo Nimota Busayo\fR and \fBW
