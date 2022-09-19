@@ -5,8 +5,8 @@ Fireball - A multipurpose command line tool for offensive and defensive security
 .SH SYNOPSIS
 .nf
 .PP 
-.BI  "Port Scanner"
-scan ipaddress/domain name [-r 1- 65535]
+.BI  "Fireball Port Scanner"
+scan ipaddress/domain name [-p 1-65535]
 .PP 
 .BI "Connection Listener"
 listen -p [port number] [ip address]
