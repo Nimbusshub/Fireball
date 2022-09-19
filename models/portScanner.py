@@ -20,7 +20,7 @@ def Scanner(ipaddress, ports=0, portLr=0):
     no_ports = 0
     """Print Port Scanner Bannner"""
     print("=" * 50)
-    print("Scan started. This might take some seconds")
+    print("Scan started. Please wait, this might take some seconds...")
     started_at = datetime.now()
     print("=" * 50)
 
@@ -37,17 +37,20 @@ def Scanner(ipaddress, ports=0, portLr=0):
             socks.close()
 
         elif isinstance(ports, list):
-            for port in ports:
-                socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                socket.setdefaulttimeout(0.5)
-                conn = socks.connect_ex((ipv4, int(port)))
-                if conn == 0:
-                    print("Port {:d}:   Open".format(int(port)))
-                    no_ports += 1
-            socks.close()
+            try:
+                for port in ports:
+                    socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    socket.setdefaulttimeout(0.5)
+                    conn = socks.connect_ex((ipv4, int(port)))
+                    if conn == 0:
+                        print("Port {:d}:   Open".format(int(port)))
+                        no_ports += 1
+                socks.close()
+            except Exception as err:
+                print("Scan is NULL because {}".format(err))
 
         elif ports and portLr:
-            for port in range(ports, portLr):
+            for port in range(ports, portLr + 1):
                 socks = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 socket.setdefaulttimeout(0.5)
                 conn = socks.connect_ex((ipv4, port))
@@ -66,4 +69,4 @@ def Scanner(ipaddress, ports=0, portLr=0):
         return
 
     except KeyboardInterrupt:
-        print("Scan Stopped\n")
+        print("\nScan Stopped\n")
