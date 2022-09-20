@@ -169,8 +169,9 @@ def client_handler(client_socket):
     elif command:
         """Command shell execution"""
         command_buffer = b''
-        while True:
-            try:
+        try:
+            while True:
+
                 client_socket.send(b'$> ')
 
                 while '\n' not in command_buffer.decode():
@@ -180,13 +181,12 @@ def client_handler(client_socket):
                 if response:
                     client_socket.send(response)
                 command_buffer = b''
+        except KeyboardInterrupt:
+            client_socket.close()
+        except Exception as err:
+            print("Server Terminated because {}".format(err))
+            client_socket.close()
 
-            except Exception as err:
-                print("Server Terminated because {}".format(err))
-                client_socket.close()
-            except KeyboardInterrupt:
-                exit()
-                
     else:
         try:
             while True:
@@ -213,5 +213,5 @@ def client_handler(client_socket):
             print("Session terminated")
             client_socket.close()
         except Exception as err:
-            print("Connection Refused 222 because {}".format(err))
+            print("Connection Refused because {}".format(err))
             client_socket.close()
