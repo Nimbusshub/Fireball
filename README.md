@@ -13,6 +13,7 @@ git clone https://github.com/Nimbusshub/Fireball.git
 ## How To Use Fireball
 
 ```bash
+cd Fireball
 ./fireball
 
 ```
