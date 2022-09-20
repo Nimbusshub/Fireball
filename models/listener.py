@@ -128,8 +128,7 @@ def server_listener():
             client_thread = threading.Thread(
                 target=client_handler, args=(client_socket,))
             client_thread.start()
-
-            client_thread.join()
+        client_thread.join()
     except Exception as err:
         print("Conection Terminated because ", err)
         server.close()
@@ -175,7 +174,7 @@ def client_handler(client_socket):
                 client_socket.send(b'$> ')
 
                 while '\n' not in command_buffer.decode():
-                    command_buffer += client_socket.recv(64)
+                    command_buffer += client_socket.recv(1024)
 
                 response = execute_handler(command_buffer.decode())
                 if response:
@@ -187,3 +186,32 @@ def client_handler(client_socket):
                 client_socket.close()
             except KeyboardInterrupt:
                 exit()
+                
+    else:
+        try:
+            while True:
+                """Receives data from connection"""
+                recvData_len = 1
+                response = ''
+
+                while recvData_len:
+                    recvData = client_socket.recv(4096)
+                    recvData_len = len(recvData)
+                    response += recvData.decode()
+
+                    if recvData_len < 4096:
+                        break
+
+                if response:
+                    print(response)
+
+                    """Prompt user for more data"""
+                    buffer = input('-> ')  # Cmd.use_rawinput()
+                    buffer += '\n'
+                    client_socket.send(buffer.encode('utf-8'))
+        except KeyboardInterrupt:
+            print("Session terminated")
+            client_socket.close()
+        except Exception as err:
+            print("Connection Refused 222 because {}".format(err))
+            client_socket.close()
