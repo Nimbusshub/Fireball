@@ -9,7 +9,7 @@ from models.listener import Listener
 
 
 class FireballPrompt(cmd.Cmd):
-    """Interactive command for HBNB project"""
+    """Interactive command for Fireball project"""
 
     __commands = ["EOF", "exit", "man", "clear", "scan"]
 
