@@ -11,6 +11,9 @@ scan ipaddress/domain name [-p 1-65535]
 .BI "Connection Listener"
 listen -p [port number] [ip address]
 .PP
+.BI "Fireball Network Sniffer"
+sniff 
+.PP
 .SH DESCRIPTION
 Fireball is a multipurpose command line tool for offensive and defensive security. This powerful tool can scan for open ports, listen and establish connection between devices and sniff on a network and capture the packets.\
 The tool is currently under development. Many functionalities will be added soon.
@@ -79,6 +82,25 @@ gument or a following \fBc\fR conversion corresponds to an \fIwint_t\fR argument
 .R A following integer conversion corresponds to a \fshort\fR or \funsigned short char\fR argument,  or a following \fBn\fR conversion coresponds to a pointer to a \fshort\fR argument.
 .SH RETURN VALUE
 The function returns the number of all characters in the format string excluding the NULL byte used to terminate the loop.
+.PP
+.SH
+.IP Listener_Specifier
+The listener knows which port the server process is listening on, and sends the client a redirect command to this port.
+.TP
+.B -l
+.R listen: specifies that fireball should listen on the specified port number.
+.TP
+.B -e
+.R execute: specifies that fireball should execute the command.
+.TP
+.B -t
+.R target_ip: the IP address of the target.
+.TP
+.B -p
+.R port: specify the port number to listen on.
+.TP
+.B -u
+.R dest: The destination where we are listening on/to.
 .SH EXAMPLE
 .R To print the strings of \fBWe did it!\fR and its length in decimal.
 
