@@ -14,7 +14,7 @@ git clone https://github.com/Nimbusshub/Fireball.git
 
 ```bash
 cd Fireball
-./fireball
+./fireball.py
 
 ```
 
@@ -38,4 +38,4 @@ Thank you for using fireball
 
 ### Contributors
 
-The tool is designed and created by **Nimota Ogunbanjo**, **Purity Njeri**, **Olamiposi Fasina**, **Aponjolosun Yemisi**, **Oluwadunni Folorunsho**.
+The tool is designed and created by **Nimota Ogunbanjo**, **Purity Njeri**, **Olamiposi Fasina**, **Yemisi Aponjolosun**, **Oluwadunni Folorunsho**.
