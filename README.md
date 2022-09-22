@@ -14,7 +14,7 @@ git clone https://github.com/Nimbusshub/Fireball.git
 
 ```bash
 cd Fireball
-./fireball.py
+./fireball
 
 ```
 
