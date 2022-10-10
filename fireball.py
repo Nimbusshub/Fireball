@@ -42,7 +42,7 @@ class FireballPrompt(cmd.Cmd):
         """Shows the man page"""
         if line == 'fireball':
             import os
-            os.system("bash -c 'man ./manii'")
+            os.system("bash -c 'man ./man_3_fireball'")
         elif line == '':
             print("Type 'man fireball' to see the usage")
         else:
