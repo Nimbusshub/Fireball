@@ -62,7 +62,7 @@ Using command 'listen' specifies that fireball should listen for connection. It 
 .IP "Under development"
 .SH OTHER USEFUL COMMANDS:
 .R To easily navigate through fireball shell, the commands
-below can help.
+below will be helpful.
 .TP
 .B man fireball
 .R Displays the man page of fireball
