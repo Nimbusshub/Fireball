@@ -112,9 +112,9 @@ def server_listener():
     """Establishes connection"""
 
     """Establish the interface to listen on"""
-    if execute == '' and dest == '' and command == False:
-        globals()['target_ip'] = ''
-    elif not len(target_ip):
+    # if execute == '' and dest == '' and command == False:
+    #     globals()['target_ip'] = ''
+    if not len(target_ip):
         globals()['target_ip'] = '0.0.0.0'
 
     print("Listening on [{}] at {}".format(target_ip, port))
