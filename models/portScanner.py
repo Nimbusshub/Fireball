@@ -19,10 +19,10 @@ def Scanner(ipaddress, ports=0, portLr=0):
 
     no_ports = 0
     """Print Port Scanner Bannner"""
-    print("=" * 50)
+    print("=" * 80)
     print("Scan started. Please wait, this might take some seconds...")
     started_at = datetime.now()
-    print("=" * 50)
+    print("=" * 80)
 
     try:
         print('\nScan report for {}\n'.format(ipv4))
