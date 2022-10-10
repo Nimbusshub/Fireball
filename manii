@@ -15,12 +15,13 @@ listen -p [port number] [ip address]
 sniff 
 .PP
 .SH DESCRIPTION
-Fireball is a multipurpose command line tool for offensive and defensive security. This powerful tool can scan for open ports, listen and establish connection between devices and sniff on a network and capture the packets.\
+Fireball is a multipurpose command line tool for offensive and defensive security. This powerful tool can scan for open ports, listen and establish connection between devices and sniff on a network and capture the packets.
+Fireball scan is very much faster when scanning for ports and it discovers more ports.
 The tool is currently under development. Many functionalities will be added soon.
 
-I populated the other parts with junk. Man page still in process.
-.SH
-.IP SPECIFIERS:
+Man page still in process.
+.PP
+.SH SPECIFIERS:
 To start the command the "-" symbol is preceeds the specifier. As "-e" specifies execute.
 .TP
 .PP
@@ -28,8 +29,11 @@ To start the command the "-" symbol is preceeds the specifier. As "-e" specifies
 .IP Scanner_Specifiers
 Fireball Scanner scans ports much faster and discovers more ports on a network.
 .TP
-.B -scan
-.R scan: scans and displays all open ports.
+.B -p
+.R port: specify the port we want to scan.
+.TP
+.B -h 
+.R help: displays helpful information on how the scan command is used.
 .TP 
 .PP
 .SH
@@ -53,21 +57,38 @@ The listener knows which port the server process is listening on, and sends the 
 .TP
 .B -h
 .R help: displays helpful information on how command is used.
+.PP
+.SH
+.IP Sniffer_Specifiers
+.R Fireball sniffer intercepts and log traffic on a netwrok. It captures each packet that flows across the network and analyses its content.
+
+.PP
 .SH EXAMPLE
-.B Sample usage
-.R listen -l -p 9999 -c
-.IP Other functionalities of Fireball:
+.B Sample Usage
 .TP
-.B -clear
+.R scan {target specification} [-p port number(s) or range].
+.TP
+.R scan 127.0.0.1 -p 1-65535
+.TP
+.R listen -l -p 9999 -c
+.SH Other functionalities of Fireball:
+.R To easily navigate through fireball shell, these commands below can help.
+.TP
+.B clear
 .R clear: clears the terminal screen
 .TP
-.B -help
+.B help
 .R help: displays helpful information on how command is used.
-
+.TP
+.B exit
+.R exit: lets you quit the fireball shell, by displaying "thanks_for_visiting_Fireball".
+.TP
+.B EOF
+.R end-of-file: used to quickly log out of the terminal
 .SH NOTES
-.R The \fBFireball Tool\fR is a project collaboration between \fBOgunbanjo Nimota Busayo\fR, \fBPurity Njeri\fR , \fBOlamiposi Fasina\fR, \fBAponjolosun Yemisi\fR and \fBOluwadunni Folorunsho\fR. Trainees "Cyber Learners at \fBCyberSafe Foundation\fR. FIREBALL "version 1.0"\
- is still in Beta testing mode. If bug(s) are detected, please feel free to email \fBogunbanjonimotabusayo@gmail.com\fR .
+.R The \fBFireball Tool\fR is a project collaboration between \fBOgunbanjo Nimota Busayo\fR, \fBPurity Njeri\fR , \fBOlamiposi Fasina\fR, \fBAponjolosun Yemisi\fR and \fBOluwadunni Folorunsho\fR. \fBCyber Learner Community\fR Trainees at \fBCyberSafe Foundation\fR. FIREBALL "version 1.0"\
+ is still in Beta testing mode. If bug(s) are detected, please feel free to email \fBogunbanjonimotabusayo@gmail.com\fR.
 .SH SEE ALSO
 .R FIREBALL
 .SH AUTHORS
-Written by \fBOgunbanjo Nimota Busayo\fR and \fBW
+Written by \fBOgunbanjo Nimota Busayo\fR
