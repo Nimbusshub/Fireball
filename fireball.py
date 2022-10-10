@@ -31,7 +31,7 @@ class FireballPrompt(cmd.Cmd):
 
     def do_EOF(self, line):
         """EOF signal to exit the program."""
-        exit()
+        pass
 
     def do_exit(self, line):
         """Exits the console"""
