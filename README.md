@@ -3,9 +3,10 @@
 **Fireball** is a multipurpose command line tool designed for use by both the Offensive and Defensive Security Teams.
 
 Fireball's functionalities include:
-* Scanning ports fast and efficiently
-* Listening and establishing connection with open ports on a network 
-* Monitoring and capturing a network traffic in real time. 
+
+- Scanning ports fast and efficiently
+- Listening and establishing connection with open ports on a network
+- Monitoring and capturing a network traffic in real time (In process).
 
 Below here are some illustrations on the installation and usage of the tool.
 
@@ -24,6 +25,7 @@ cd Fireball
 ```
 
 #### Output
+
 Below is the output that results from runnig the commands above:
 
 ```bash
@@ -41,27 +43,35 @@ Welcome to fireball shell. Type 'man fireball' to see the usage
 
 Thank you for using fireball
 ```
+
 Other syntaxes:
 
-* To scan for open ports on an IP address 
+- To scan for open ports on an IP address
+
 ```
 scan {target IP address}
 ```
-* To scan for open ports on a domain name
+
+- To scan for open ports on a domain name
+
 ```
 scan {domain name}
 ```
-* To scan specific ports on a target IP or domain name
+
+- To scan specific ports on a target IP or domain name
+
 ```
 scan {target IP address/domain name}  -p {port(s)}
 ```
-* To listen on a port and establish connection
+
+- To listen on a port and establish connection
+
 ```
-listen -l -p{port number} -c 
+listen -l -p{port number} -c
 ```
 
-For more information and examples see the Documentation here. 
+For more information and examples see the Documentation here.
 
 ## Contributors
 
-The tool is designed and created by **Nimota Ogunbanjo**, **Purity Njeri**, **Olamiposi Fasina**, **Yemisi Aponjolosun**, **Oluwadunni Folorunsho**. You can help make it better by sending bug reports to ogubanjonimotabusayo@gmail.com. 
+The tool is designed and created by **Nimota Ogunbanjo**, **Purity Njeri**, **Olamiposi Fasina**, **Yemisi Aponjolosun**, **Oluwadunni Folorunsho**. You can help make it better by sending bug reports to ogubanjonimotabusayo@gmail.com.
