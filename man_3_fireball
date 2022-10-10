@@ -29,7 +29,7 @@ being probed for open connection.
 \fI-p 134,452,53,4\fR means port 134, 452, 53 and 4 will be scanned.
 .TP
 .B -h
-.R Display helpful information about the command.
+.R Display helpful information on how to use scan.
 .PP
 .SH LISTENER:
 The listener can be used to establish connection between devices, listen on arbitrary ports and \
@@ -54,7 +54,7 @@ Using command 'listen' specifies that fireball should listen for connection. It 
 .R Destination of the file to append the received content.
 .TP
 .B -h
-.R Display helpful information about the command.
+.R Display helpful information on how to use listen.
 .PP
 .SH NETWORK SNIFFER:
 .R Fireball sniffer intercepts and log traffic on a netwrok. It captures each packet that flows across the network and analyses its content.
