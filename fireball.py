@@ -36,7 +36,7 @@ class FireballPrompt(cmd.Cmd):
     def do_exit(self, line):
         """Exits the console"""
         print("\nThank you for using fireball")
-        exit()
+        return True
 
     def do_man(self, line):
         """Shows the man page"""
