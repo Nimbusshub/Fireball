@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""All common tcp ports written Veerendra.Kakumanu"""
+"""All common tcp ports written by Veerendra.Kakumanu"""
 
 all_ports = {
     "1": "tcpmux",

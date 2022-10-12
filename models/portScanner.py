@@ -4,6 +4,7 @@
 import socket
 import subprocess
 from datetime import datetime
+from models.commonPorts import all_ports
 
 
 def Scanner(ipaddress, ports=0, portLr=0):
@@ -32,8 +33,13 @@ def Scanner(ipaddress, ports=0, portLr=0):
                 socket.setdefaulttimeout(0.5)
                 conn = socks.connect_ex((ipv4, port))
                 if conn == 0:
-                    print("Port {:d}:   Open".format(port))
+                    print("Port {:d}:   Open".format(port), end='')
                     no_ports += 1
+                    key = str(port)
+                    if key in all_ports.keys():
+                        print("     {}".format(all_ports[key]))
+                    else:
+                        print("     unknown")
             socks.close()
 
         elif isinstance(ports, list):
@@ -43,8 +49,13 @@ def Scanner(ipaddress, ports=0, portLr=0):
                     socket.setdefaulttimeout(0.5)
                     conn = socks.connect_ex((ipv4, int(port)))
                     if conn == 0:
-                        print("Port {:d}:   Open".format(int(port)))
+                        print("Port {:d}:   Open".format(int(port)), end='')
                         no_ports += 1
+                        key = port
+                        if key in all_ports.keys():
+                            print("     {}".format(all_ports[key]))
+                        else:
+                            print("     unknown")
                 socks.close()
             except Exception as err:
                 print("Scan is NULL because {}".format(err))
@@ -55,8 +66,13 @@ def Scanner(ipaddress, ports=0, portLr=0):
                 socket.setdefaulttimeout(0.5)
                 conn = socks.connect_ex((ipv4, port))
                 if conn == 0:
-                    print("Port {:d}:   Open".format(port))
+                    print("Port {:d}:   Open".format(port), end='')
                     no_ports += 1
+                    key = str(port)
+                    if key in all_ports.keys():
+                        print("     {}".format(all_ports[key]))
+                    else:
+                        print("     unknown")
             socks.close()
 
         ended_at = datetime.now()
