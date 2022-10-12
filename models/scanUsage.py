@@ -6,5 +6,5 @@ def usageScan():
 
 
 def usageListener():
-    print("listen {}......\n\
+    print("listen [-l] [-t [target ip]] [-p [port]] ...\n\
         run 'man fireball' for help")
