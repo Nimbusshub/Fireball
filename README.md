@@ -74,4 +74,4 @@ For more information and examples see the Documentation here.
 
 ## Contributors
 
-The tool is designed and created by **Nimota Ogunbanjo**, **Purity Njeri**, **Olamiposi Fasina**, **Yemisi Aponjolosun**, **Oluwadunni Folorunsho**. You can help make it better by sending bug reports to ogubanjonimotabusayo@gmail.com.
+The tool is designed and created by **Nimota Ogunbanjo**, **Purity Njeri**, **Olamiposi Fasina**, **Yemisi Aponjolosun**. You can help make it better by sending bug reports to ogubanjonimotabusayo@gmail.com.
