@@ -1,4 +1,4 @@
-# Security Tool - Fireball v1.0
+# Security Tool - Fireball v1.0 (In Development)
 
 **Fireball** is a multipurpose command line tool designed for use by both the Offensive and Defensive Security Teams.
 
