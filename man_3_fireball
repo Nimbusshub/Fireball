@@ -41,8 +41,8 @@ Using command 'listen' specifies that fireball should listen for connection. It 
 .B -l
 .R To listen for connection and bind to it.
 .TP
-.B -e
-.R Executes the file passed to it.
+.B -c
+.R Executes a command shell.
 .TP
 .B -t
 .R IP address of the target.
