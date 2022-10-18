@@ -14,9 +14,8 @@ import fileinput
 port = 0
 target_ip = ''
 listen = False
-execute = ''
 dest = ''
-command = False
+command_shell = False
 
 
 def Listener(args_split: list):
@@ -35,14 +34,12 @@ def Listener(args_split: list):
             usageListener()
         elif opt in ['-l']:
             globals()['listen'] = True
-        elif opt in ['-e']:
-            globals()['execute'] = arg
         elif opt in ['-t']:
             globals()['target_ip'] = arg
         elif opt in ['-p']:
             globals()['port'] = int(arg)
         elif opt in ['-c']:
-            globals()['command'] = True
+            globals()['command_shell'] = True
         elif opt in ['-u']:
             globals()['dest'] = arg
 
@@ -163,12 +160,7 @@ def client_handler(client_socket):
             client_socket.send(
                 "Failed to save file to {}".format(dest).encode())
 
-    elif len(execute):
-        """Command execution"""
-        output = execute_handler(execute)
-        client_socket.send(output.encode())
-
-    elif command:
+    elif command_shell:
         """Command shell execution"""
         command_buffer = b''
         try:
@@ -177,7 +169,7 @@ def client_handler(client_socket):
                 client_socket.send(b'$> ')
 
                 while '\n' not in command_buffer.decode():
-                    command_buffer += client_socket.recv(1024)
+                    command_buffer += client_socket.recv(2048)
 
                 response = execute_handler(command_buffer.decode())
                 if response:
