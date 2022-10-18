@@ -11,23 +11,21 @@ from models.listener import Listener
 class FireballPrompt(cmd.Cmd):
     """Interactive command for Fireball project"""
 
-    __commands = ["EOF", "exit", "man", "clear", "scan"]
+    __commands = ["EOF", "exit", "man", "clear", "scan", "listen"]
 
     intro = printBanner()
     intro = '\n' + "Welcome to fireball shell. Type 'man fireball' to see the usage\n"
     prompt = "<FireB>  "
 
     # def precmd(self, args):
-    #     if args == '':
-    #         return args
-    #     args_split = args.split()
-    #     plist = []
-    #     if args_split[1] == '-p':
-    #         if ',' in args.split[2]:
-    #             plist = args_split[2].split(',')
-    #             args = list(args_split[0] + plist
+    # args_split = args.split()[0]
 
-    #     return args
+    # if args_split in type(self).__commands:
+    # return args
+    # else:
+    # import os
+    # os.system("bash -c '{}'".format(args))
+    # return ''
 
     def do_EOF(self, line):
         """EOF signal to exit the program."""
