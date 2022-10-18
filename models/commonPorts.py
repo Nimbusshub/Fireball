@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""All common tcp ports written by Veerendra.Kakumanu"""
+"""All common tcp ports were written by Veerendra.Kakumanu
+The script can be found on github.com/veerendra2/port-dictionaries/TCPPorts.py"""
 
 all_ports = {
     "1": "tcpmux",
